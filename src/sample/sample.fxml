@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
@@ -8,10 +7,6 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="635.0" prefWidth="539.0" style="-fx-background-color: #121212;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <Button fx:id="cringeButton" layoutX="33.0" layoutY="30.0" mnemonicParsing="false" onAction="#showCringe" prefHeight="32.0" prefWidth="124.0" style="-fx-background-color: #404040;" text="Show cringe" textFill="WHITE" visible="false">
-         <font>
-            <Font name="Arial" size="14.0" />
-         </font></Button>
       <Button fx:id="startButton" layoutX="192.0" layoutY="30.0" mnemonicParsing="false" onAction="#StartGame" prefHeight="32.0" prefWidth="157.0" style="-fx-background-color: #404040;" text="Start game" textFill="WHITE">
          <font>
             <Font name="Arial" size="14.0" />
@@ -21,7 +16,7 @@
             <Font name="Arial" size="14.0" />
          </font>
       </Label>
-      <Pane fx:id="tttPane" disable="true" layoutX="33.0" layoutY="88.0" prefHeight="471.0" prefWidth="476.0" style="-fx-background-color: #000000;">
+      <Pane fx:id="tttPane" layoutX="33.0" layoutY="88.0" prefHeight="471.0" prefWidth="476.0" style="-fx-background-color: #000000;" visible="false">
          <children>
             <GridPane fx:id="tttGrid" gridLinesVisible="true" nodeOrientation="LEFT_TO_RIGHT" prefHeight="471.0" prefWidth="476.0" style="-fx-border-color: #FFFFFF;">
               <columnConstraints>
@@ -46,20 +41,6 @@
                   <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
                </children>
             </GridPane>
-         </children>
-      </Pane>
-      <Pane fx:id="cringePane" layoutX="14.0" layoutY="86.0" prefHeight="540.0" prefWidth="514.0" style="-fx-background-color: #121212;" visible="false">
-         <children>
-            <ImageView fx:id="cringeImage" fitHeight="362.0" fitWidth="403.0" layoutX="56.0" layoutY="150.0" onMouseClicked="#showSuck" pickOnBounds="true" preserveRatio="true">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </ImageView>
-            <Label layoutX="20.0" layoutY="-10.0" prefHeight="141.0" prefWidth="476.0" text="C R I N G E" textFill="WHITE">
-               <font>
-                  <Font size="96.0" />
-               </font>
-            </Label>
          </children>
       </Pane>
    </children>

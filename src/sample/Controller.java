@@ -7,7 +7,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -21,38 +20,6 @@ import java.util.Random;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
-
-    // Cringe ----------------------------------------------------------------------------------------------------------
-
-    @FXML
-    private Button cringeButton;
-
-    @FXML
-    private Pane cringePane;
-
-    @FXML
-    private ImageView cringeImage;
-
-    @FXML
-    private final Alert suckAlert = new Alert(Alert.AlertType.WARNING, "You suck");
-
-    boolean isCringe = false;
-
-    public void showCringe(ActionEvent actionEvent) {
-        isCringe = !isCringe;
-        cringePane.setVisible(isCringe);
-        if (isCringe) {
-            cringeButton.setText("Show TTT");
-        } else {
-            cringeButton.setText("Show cringe");
-        }
-    }
-
-    public void showSuck(MouseEvent mouseEvent) {
-        suckAlert.showAndWait();
-    }
-
-    // Tic-tac-toe -----------------------------------------------------------------------------------------------------
 
     @FXML
     private Pane tttPane;
@@ -77,7 +44,7 @@ public class Controller implements Initializable {
     public void StartGame(ActionEvent actionEvent) {
         if(!gameStarted) {
             startButton.setText("Restart game");
-            tttPane.setDisable(false);
+            tttPane.setVisible(true);
             gameStarted = true;
         }
 
@@ -88,18 +55,10 @@ public class Controller implements Initializable {
 
         turnX = new Random().nextBoolean();
         turnInfo.setText("Turn: random");
-
-        if (isCringe) {
-            showCringe(actionEvent);
-        }
     }
-
-    // Initialize ------------------------------------------------------------------------------------------------------
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        cringeImage.setImage(new Image(getClass().getResourceAsStream("/viblyadok.png")));
-
         poles = tttGrid.getChildren();
 
         for (int i = 0; i < 9; i++) {
